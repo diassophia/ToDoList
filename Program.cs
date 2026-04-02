@@ -24,6 +24,8 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//Adicionar o serviço após criar
+builder.Services.AddScoped<UsuarioServices>();
 
 
 // Customização da resposta de validação (Data Annotations)
